@@ -1,0 +1,6 @@
+# melos_managed_dependency_overrides: pitik_app_core,pitik_app_kit
+dependency_overrides:
+  pitik_app_core:
+    path: ../pitik_app_core
+  pitik_app_kit:
+    path: ../pitik_app_kit

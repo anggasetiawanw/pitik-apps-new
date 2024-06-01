@@ -1,0 +1,28 @@
+name: melos_pitik_apps_command
+
+packages:
+  - ./**
+command:
+  bootstrap:
+    runPubGetInParallel: false
+
+scripts:
+  # build runner build
+  gen-env-smart-app:
+    run: dart pub global run melos exec --scope="*pitik_smart_app*" "flutter pub run flutter_flavorizr"
+    description: generate flavor for pitik_smart_app
+  build-core:
+    run: dart pub global run melos exec --scope="*pitik_app_core*" --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build pitik app module.
+  build-smart-app:
+    run: dart pub global run melos exec --scope="*pitik_smart_app*" --depends-on="build_runner" "dart run build_runner build --delete-conflicting-outputs"
+    description: build_runner build pitik app module.
+  watch-smart-app:
+    run: dart pub global run melos exec --scope="*pitik_smart_app*" --depends-on="build_runner" "dart run build_runner watch"
+    description: build_runner build pitik app module.
+  format-ppl:
+    run: dart pub global run melos exec --scope="*pitik_smart_app*" -- "dart format . --fix --line-length 250 && dart fix --apply"
+    description: 'Run dart format and dart fix for ppl packages'
+  format-all:
+    run: dart pub global run melos exec -- "dart format . --fix --line-length 250 && dart fix --apply"
+    description: 'Run dart format and dart fix for all packages'

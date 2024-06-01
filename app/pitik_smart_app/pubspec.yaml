@@ -1,0 +1,71 @@
+name: pitik_smart_app
+version: 2.0.2+525
+publish_to: none
+description: Pitik - Smart Broiler Farming
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_flavorizr: ^2.2.2
+  flutter_speed_dial: ^7.0.0
+  flutter_riverpod: any
+  pitik_app_depedencies:
+    path: ../../packages/pitik_app_depedencies
+dev_dependencies:
+  auto_route_generator: ^7.3.2
+  build_runner: ^2.4.7
+  flutter_html: ^3.0.0-beta.2
+  flutter_test:
+    sdk: flutter
+  freezed: ^2.4.6
+  injectable_generator: ^2.4.1
+  json_serializable: ^6.7.1
+  mocktail: ^1.0.2
+  very_good_analysis: ^5.1.0
+
+flavorizr:
+  app:
+    android:
+      flavorDimensions: flavor-type
+  flavors:
+    prod:
+      app:
+        name: Pitik - Smart Broiler Farming
+      android:
+        applicationId: id.pitik.mobile
+        icon: ios/config/logo_ppl.png
+        firebase:
+          config: android/app/src/prod/google-services.json
+      ios:
+        bundleId: id.pitik.mobile
+        icon: ios/config/logo_ppl.png
+        firebase:
+          config: ios/config/prod/GoogleService-Info.plist
+    dev:
+      app:
+        name: Pitik - Smart Broiler Farming (Staging)
+      android:
+        applicationId: id.pitik.mobilestaging
+        icon: ios/config/logo_ppl.png
+        firebase:
+          config: android/app/src/dev/google-services.json
+      ios:
+        bundleId: id.pitik.mobilestaging
+        icon: ios/config/logo_ppl.png
+        firebase:
+          config: ios/config/dev/GoogleService-Info.plist
+
+flutter:
+  assets:
+    - shorebird.yaml
+  fonts:
+    - family: Montserrat_Bold
+      fonts:
+        - asset: font/montserrat_bold.ttf
+    - family: Montserrat_Medium
+      fonts:
+        - asset: font/montserrat_medium.ttf
+  uses-material-design: true

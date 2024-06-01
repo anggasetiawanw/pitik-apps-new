@@ -1,0 +1,41 @@
+name: pitik_app_depedencies
+description: 'A new Flutter package project.'
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+  flutter: '>=1.17.0'
+
+dependencies:
+  auto_route: ^7.9.2
+  dartz: ^0.10.1
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  freezed_annotation: ^2.4.1
+  get_it: ^7.6.4
+  injectable: ^2.3.2
+  intl: 0.18.1
+  json_annotation: ^4.8.1
+  url_launcher: ^6.2.2
+  pitik_app_core:
+    path: ../pitik_app_core
+  pitik_app_kit:
+    path: ../pitik_app_kit
+  flutter_riverpod: ^2.0.2
+  shared_preferences: ^2.2.2
+  chucker_flutter: ^1.6.3
+  package_info_plus: ^6.0.0
+  firebase_core: ^2.27.1
+  firebase_crashlytics: ^3.4.19
+  firebase_messaging: ^14.7.20
+  firebase_remote_config: ^4.3.18
+  flutter_local_notifications: ^17.0.0
+  dio: ^5.2.1+1
+
+dev_dependencies:
+  flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
